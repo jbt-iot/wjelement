@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 include(CheckIncludeFiles)
 include(CheckSymbolExists)
 
-option(STATIC_LIB "Compile as static libraries" OFF)
+option(STATIC_LIB "Compile as static libraries" ON)
 
 if(STATIC_LIB)
   set(BUILD_SHARED_LIBS OFF)
