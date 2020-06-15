@@ -25,21 +25,6 @@ SET_TARGET_PROPERTIES(
 install(TARGETS wjelement
 	LIBRARY DESTINATION ${LIB_DEST_DIR}
 	ARCHIVE DESTINATION ${LIB_DEST_DIR}
-	)
-
-
-# unit tests
-add_executable(wjeunit
-	wjeunit.c
-)
-
-target_link_libraries(wjeunit
-	wjreader
-	wjwriter
-	wjelement
-	xpl
-	${PTHREAD_LIBS}
-	${ALL_LIBS}
 )
 
 # The use of ${EXECUTABLE_OUTPUT_PATH} is required for windows
