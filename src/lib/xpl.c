@@ -290,6 +290,20 @@ EXPORT char * strspace( char *source )
 	return NULL;
 }
 
+#if defined(__QNXNTO__)
+EXPORT char *strndup(const char *s, size_t n) {
+    char *p = memchr(s, '\0', n);
+    if (p != NULL)
+        n = p - s;
+    p = malloc(n + 1);
+    if (p != NULL) {
+        memcpy(p, s, n);
+        p[n] = '\0';
+    }
+    return p;
+}
+#endif
+
 #if defined(_WIN32)
 EXPORT char * strndup( char *p, size_t maxlen )
 {
